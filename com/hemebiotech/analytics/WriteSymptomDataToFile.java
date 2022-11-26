@@ -6,6 +6,11 @@ import java.util.Map;
 
 public class WriteSymptomDataToFile implements ISymptomWriter {
 
+  /**
+  * Write symptoms in result.out file.
+  * 
+  * @params list of symptoms
+  */
   public void writeSymptoms(Map<String, Integer> symptoms) {
     try {
       FileWriter writer = new FileWriter("result.out");

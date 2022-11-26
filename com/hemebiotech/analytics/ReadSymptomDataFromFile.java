@@ -8,29 +8,27 @@ import java.util.List;
 
 public class ReadSymptomDataFromFile implements ISymptomReader {
 
-    private final String filepath;
+  private final String filepath;
 
-    public ReadSymptomDataFromFile(String filepath) {
-        this.filepath = filepath;
-    }
+  public ReadSymptomDataFromFile(String filepath) {
+    this.filepath = filepath;
+  }
 
-    @Override
-    public List<String> getSymptoms() {
-        ArrayList<String> result = new ArrayList<String>();
-        if (filepath != null) {
-            try (BufferedReader reader = new BufferedReader(new FileReader(filepath))) {
-                String line = reader.readLine();
+  @Override
+  public List<String> getSymptoms() {
+    ArrayList<String> result = new ArrayList<String>();
+    if (filepath != null) {
+      try (BufferedReader reader = new BufferedReader(new FileReader(filepath))) {
+        String line = reader.readLine();
 
-                while (line != null) {
-                    result.add(line);
-                    line = reader.readLine();
-                }
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+        while (line != null) {
+          result.add(line);
+          line = reader.readLine();
         }
-
-        return result;
+      } catch (IOException e) {
+        e.printStackTrace();
+      }
     }
-
+    return result;
+  }
 }

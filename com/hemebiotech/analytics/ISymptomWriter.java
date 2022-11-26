@@ -7,5 +7,11 @@ import java.util.ArrayList;
 import java.util.Map;
 
 public interface ISymptomWriter {
-	void writeSymptoms(Map<String, Integer> symptoms);
+
+  /**
+  * Write symptoms in result.out file.
+  * 
+  * @params list of symptoms
+  */
+  void writeSymptoms(Map<String, Integer> symptoms);
 }
